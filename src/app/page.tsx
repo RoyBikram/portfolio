@@ -1,3 +1,5 @@
+import { Typography } from "@mui/material";
+
 export default function Home() {
-  return <>Bikram Roy</>;
+  return <Typography>Bikram Roy</Typography>;
 }
