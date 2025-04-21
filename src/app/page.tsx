@@ -1,5 +1,14 @@
-import { Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 export default function Home() {
-  return <Typography>Bikram Roy</Typography>;
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        height: "100vh",
+        display: "grid",
+        placeItems: "center",
+      }}
+    ></Box>
+  );
 }
