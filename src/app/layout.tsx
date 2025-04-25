@@ -2,13 +2,18 @@ import theme from "@/theme";
 import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Ubuntu } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+});
+const ubuntu = Ubuntu({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,8 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${poppins.className} antialiased`}>
-        <AppRouterCacheProvider options={{ key: 'css' }}>
+      <body className={`${poppins.className} ${ubuntu.className} antialiased`}>
+        <AppRouterCacheProvider options={{ key: "css" }}>
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </AppRouterCacheProvider>
       </body>
