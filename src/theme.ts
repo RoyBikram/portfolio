@@ -1,7 +1,7 @@
 "use client";
 import { colors } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-declare module "@mui/material/typography" {
+declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     subtitle: true;
     title: true;
