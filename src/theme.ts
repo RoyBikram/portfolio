@@ -5,9 +5,19 @@ declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     subtitle: true;
     title: true;
+    body: true;
   }
 }
 const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#752EFC",
+    },
+    text: {
+      primary: "white",
+      secondary: colors.grey[400],
+    },
+  },
   typography: {
     fontFamily: "var(--font-poppins)",
   },
@@ -31,6 +41,15 @@ const theme = createTheme({
               },
               style: {
                 fontSize: "20px",
+                color: colors.grey[400],
+              },
+            },
+            {
+              props: {
+                variant: "body",
+              },
+              style: {
+                fontSize: "16px",
                 color: colors.grey[400],
               },
             },
