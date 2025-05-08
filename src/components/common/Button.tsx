@@ -7,25 +7,34 @@ import {
 import { ReactNode } from "react";
 import BackgroundGradient from "../ui/background-gradient";
 
-interface ButtonProps extends MuiButtonProps {
+interface ButtonProps extends Omit<MuiButtonProps, "variant"> {
   children: ReactNode;
+  variant?: "primary" | "secondary";
   colors?: string[];
   sx?: SxProps;
 }
 
-const Button = ({ children, sx, ...props }: ButtonProps) => {
+const Button = ({
+  children,
+  sx,
+  variant = "primary",
+  ...props
+}: ButtonProps) => {
   return (
     <Box sx={{ ...sx }}>
-      <BackgroundGradient className='rounded-[22px] max-w-sm bg-white dark:bg-zinc-900 overflow-hidden w-fit'>
+      <BackgroundGradient
+        className={`rounded-[22px] max-w-sm bg-white dark:bg-zinc-900 overflow-hidden w-fit `}
+        containerClassName={`${variant === "primary" ? "p-[3px]" : "p-[2px]"}`}
+      >
         <MuiButton
           sx={{
             textTransform: "capitalize",
             color: "white",
-            fontSize: "16px",
+            fontSize: variant === "primary" ? "16px" : "14px",
             fontWeight: "400",
-            px: "25px",
-            py: "12px",
-            lineHeight: "24px",
+            px: variant === "primary" ? "25px" : "8px",
+            py: variant === "primary" ? "12px" : "6px",
+            lineHeight: variant === "primary" ? "24px" : "16px",
           }}
           {...props}
         >

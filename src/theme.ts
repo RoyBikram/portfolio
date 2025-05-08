@@ -6,16 +6,28 @@ declare module "@mui/material/Typography" {
     subtitle: true;
     title: true;
     body: true;
+    subtitleSmall: true;
+    titleSmall: true;
+    bodySmall: true;
   }
 }
+
+declare module "@mui/material/styles" {
+  interface TypeText {
+    background: string;
+  }
+}
+
 const theme = createTheme({
   palette: {
     primary: {
       main: "#752EFC",
     },
+
     text: {
       primary: "white",
       secondary: colors.grey[400],
+      background: "#282828",
     },
   },
   typography: {
@@ -33,6 +45,7 @@ const theme = createTheme({
               style: {
                 fontSize: "36px",
                 color: "white",
+                lineHeight: "46px",
               },
             },
             {
@@ -50,6 +63,25 @@ const theme = createTheme({
               },
               style: {
                 fontSize: "16px",
+                color: colors.grey[400],
+              },
+            },
+            {
+              props: {
+                variant: "titleSmall",
+              },
+              style: {
+                fontSize: "16px",
+                color: "white",
+              },
+            },
+
+            {
+              props: {
+                variant: "bodySmall",
+              },
+              style: {
+                fontSize: "14px",
                 color: colors.grey[400],
               },
             },
