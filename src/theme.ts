@@ -53,8 +53,9 @@ const theme = createTheme({
                 variant: "subtitle",
               },
               style: {
-                fontSize: "20px",
-                color: colors.grey[400],
+                fontSize: "25px",
+                color: "white",
+                lineHeight: "30px",
               },
             },
             {
@@ -62,7 +63,7 @@ const theme = createTheme({
                 variant: "body",
               },
               style: {
-                fontSize: "16px",
+                fontSize: "18px",
                 color: colors.grey[400],
               },
             },

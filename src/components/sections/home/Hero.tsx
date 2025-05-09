@@ -52,7 +52,14 @@ const Hero = () => {
           </Typography>
         </ExpandingBox>
 
-        <Typography variant='subtitle' sx={{ mt: 5, maxWidth: "700px" }}>
+        <Typography
+          sx={{
+            mt: 5,
+            maxWidth: "700px",
+            fontSize: "20px",
+            color: colors.grey[400],
+          }}
+        >
           That's exactly what I do. I transform your ideas into highly scalable
           and future-proof web masterpieces. Then, what are you waiting for?
         </Typography>

@@ -23,7 +23,7 @@ const Button = ({
   return (
     <Box sx={{ ...sx }}>
       <BackgroundGradient
-        className={`rounded-[22px] max-w-sm bg-white dark:bg-zinc-900 overflow-hidden w-fit `}
+        className={`rounded-[22px] max-w-sm bg-[#2d2d2d] dark:bg-[#2d2d2d] overflow-hidden w-fit `}
         containerClassName={`${variant === "primary" ? "p-[3px]" : "p-[2px]"}`}
       >
         <MuiButton
