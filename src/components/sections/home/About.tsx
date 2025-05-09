@@ -1,6 +1,6 @@
 "use client";
 
-import aboutImage from "@/assets/about_img.jpg";
+import aboutImage from "@/assets/aboutpage/about_img.jpg";
 import Button from "@/components/common/Button";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";

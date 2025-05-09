@@ -2,8 +2,8 @@
 import Heading from "@/components/common/Heading";
 import { Box, Typography } from "@mui/material";
 
-import image1 from "@/assets/portfolio/e-commerce.jpg";
-import folderImg from "@/assets/portfolio/folder_img.png";
+import folderImg from "@/assets/protfulio/folder_img.png";
+import image1 from "@/assets/protfulio/project_img/e-commerce.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles

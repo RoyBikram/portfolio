@@ -1,7 +1,7 @@
 "use client";
 
-import handIcon from "@/assets/helloHand.png";
-import HomeImage from "@/assets/heroImage.svg";
+import handIcon from "@/assets/homepage/hello.png";
+import HomeImage from "@/assets/homepage/heroImage.svg";
 import ExpandingBox from "@/components/animation/ExpandingBox";
 import Button from "@/components/common/Button";
 import { ExpandableMessageSend } from "@/components/ui/expandable-card";
