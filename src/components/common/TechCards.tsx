@@ -1,5 +1,6 @@
 "use client";
 
+import { Box } from "@mui/material";
 import {
   AnimatePresence,
   motion,
@@ -19,6 +20,7 @@ export const TechCards = ({
     description: string;
     image: StaticImport;
     color: string;
+    backgroundColor: string;
   }[];
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -40,10 +42,18 @@ export const TechCards = ({
   };
 
   return (
-    <>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        gap: 2,
+        alignItems: "end",
+        flexWrap: "wrap",
+      }}
+    >
       {items.map((item, idx) => (
         <div
-          className='group relative -mr-4'
+          className='group relative'
           key={item.name}
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -68,29 +78,47 @@ export const TechCards = ({
                   rotate: rotate,
                   whiteSpace: "nowrap",
                 }}
-                className='absolute bottom-13 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center justify-center rounded-md bg-black px-4 py-2 text-xs shadow-xl w-[200px] '
+                className='absolute bottom-24 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center justify-center rounded-md bg-black px-4 py-2 text-xs shadow-xl w-[200px] '
               >
                 <div className='absolute inset-x-10 -bottom-px z-30 h-px w-[20%] bg-gradient-to-r from-transparent via-emerald-500 to-transparent' />
                 <div className='absolute -bottom-px left-10 z-30 h-px w-[40%] bg-gradient-to-r from-transparent via-sky-500 to-transparent' />
                 <div className='relative z-30 text-base font-bold text-white'>
                   {item.name}
                 </div>
-                <div className='text-xs text-white text-wrap'>
+                <div className='text-xs text-white text-wrap text-center'>
                   {item.description}
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
-          <Image
-            onMouseMove={handleMouseMove}
-            height={100}
-            width={100}
-            src={item.image}
-            alt={item.name}
-            className='relative !m-0 h-14 w-14 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105 bg-[#2d2d2d] dark:bg-[#2d2d2d]'
-          />
+          <Box
+            sx={{
+              border: `2px solid ${item.color}`,
+              height: 70,
+              width: 70,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 20,
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              backgroundColor: item.backgroundColor,
+              "&:hover": {
+                transform: "scale(1.1) translateY(-10px)",
+                zIndex: 100,
+              },
+            }}
+          >
+            <Image
+              onMouseMove={handleMouseMove}
+              height={35}
+              width={35}
+              src={item.image}
+              alt={item.name}
+            />
+          </Box>
         </div>
       ))}
-    </>
+    </Box>
   );
 };
