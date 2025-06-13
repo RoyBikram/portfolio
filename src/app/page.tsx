@@ -1,4 +1,5 @@
 import About from "@/components/sections/home/About";
+import Contact from "@/components/sections/home/Contact";
 import Hero from "@/components/sections/home/Hero";
 import Portfolio from "@/components/sections/home/Portfolio";
 import Progress from "@/components/sections/home/Progress";
@@ -13,6 +14,7 @@ export default function Home() {
       <Services />
       <Tech />
       <Progress />
+      <Contact/>
     </>
   );
 }
